@@ -1,0 +1,30 @@
+ion-card {
+    margin: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-2px);
+    }
+  
+    &.featured {
+      margin: 24px;
+      
+      img {
+        height: 300px;
+        object-fit: cover;
+      }
+      
+      ion-card-content {
+        padding: 16px;
+      }
+    }
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid var(--ion-color-light);
+    padding-top: 8px;
+  }

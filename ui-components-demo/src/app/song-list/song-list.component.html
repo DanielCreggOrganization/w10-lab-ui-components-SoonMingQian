@@ -1,0 +1,32 @@
+<ion-list>
+  <ion-reorder-group [disabled]="!reorderEnabled" (ionItemReorder)="handleReorder($event)">
+    <ng-container *ngFor="let category of getSongCategories()">
+      <ion-item-divider sticky>
+        <ion-label>{{ category }}</ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let song of getSongsByCategory(category)">
+        <ion-item>
+          <ion-label>
+            <h2>{{ song.title }}</h2>
+            <p>{{ song.artist }}</p>
+          </ion-label>
+          <ion-note slot="end">{{ song.duration }}</ion-note>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option color="success" (click)="playSong(song)">
+            <ion-icon slot="icon-only" name="play"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="end">
+          <ion-item-option color="primary" (click)="addToPlaylist(song)">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ng-container>
+  </ion-reorder-group>
+</ion-list>
