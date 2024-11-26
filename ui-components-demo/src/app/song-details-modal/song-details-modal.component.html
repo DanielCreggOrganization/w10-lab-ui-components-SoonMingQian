@@ -1,0 +1,55 @@
+<ion-modal 
+  [isOpen]="isOpen"
+  [breakpoints]="[0, 0.25, 0.5, 0.75]"
+  [initialBreakpoint]="0.5"
+  [canDismiss]="true"
+  [presentingElement]="presentingElement"
+  (ionModalWillPresent)="onWillPresent()"
+  (ionModalDidDismiss)="onDidDismiss()"
+  [@modalAnimation]>
+  
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Song Details</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="isOpen = false">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content class="ion-padding">
+      <div class="song-details">
+        <img src="album-cover.jpg" alt="Album Cover" class="album-cover"/>
+        <h2>Song Title</h2>
+        <p class="artist">Artist Name</p>
+        
+        <div class="metadata">
+          <div class="info-item">
+            <ion-icon name="time-outline"></ion-icon>
+            <span>3:45</span>
+          </div>
+          <div class="info-item">
+            <ion-icon name="musical-notes-outline"></ion-icon>
+            <span>Album Name</span>
+          </div>
+          <div class="info-item">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>2024</span>
+          </div>
+        </div>
+        
+        <div class="actions">
+          <ion-button expand="block" color="primary">
+            <ion-icon slot="start" name="play"></ion-icon>
+            Play Now
+          </ion-button>
+          <ion-button expand="block" fill="outline">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Add to Playlist
+          </ion-button>
+        </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

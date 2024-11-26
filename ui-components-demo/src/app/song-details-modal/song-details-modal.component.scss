@@ -1,0 +1,50 @@
+.song-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  
+    .album-cover {
+      width: 200px;
+      height: 200px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    h2 {
+      font-size: 24px;
+      margin: 8px 0;
+    }
+  
+    .artist {
+      color: var(--ion-color-medium);
+      margin-bottom: 16px;
+    }
+  
+    .metadata {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin: 24px 0;
+  
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--ion-color-medium);
+  
+        ion-icon {
+          font-size: 20px;
+        }
+      }
+    }
+  
+    .actions {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+  }
